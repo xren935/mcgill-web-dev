@@ -9,6 +9,7 @@
         color: #21af1c;
       }
 
+      /* added */
       .a-toggle {
         color: #2ed4f9ea;
       }
@@ -30,6 +31,7 @@
         padding-right: 75px;
       }
 
+      /* added */
       .topbar-toggle {
         background-color: #0033cc;
       }
@@ -51,6 +53,7 @@
         color: white;
       }
 
+      /* added */
       .blogHeader-toggle {
         background-color: #4d79ff;
       }
@@ -94,6 +97,7 @@
         margin-top: -8px;
       }
 
+      /* added */
       .sidebar-toggle {
         background-color: #86a7e9c7;
       }
@@ -172,6 +176,7 @@
         margin-bottom: 12px;
       }
 
+      /* added */
       .greenLine-toggle {
         border-left: 3px solid rgb(56, 153, 228);
       }
@@ -204,11 +209,10 @@
         font-size: 16px;
       }
 
+      /* added */
       .footer-links-toggle {
         color: rgb(0, 187, 255);
       }
-
-      /* end of added */
 
       .footerRight {
         margin-left: 75px;
@@ -242,6 +246,7 @@
         margin-top: 17px;
       }
 
+      /* added */
       .copyright-toggle {
         color: rgb(0, 187, 255);
       }
@@ -256,34 +261,40 @@
   <body>
     <script>
       function ChangeColour() {
-        // toggle the colors of the top bars etc.
+        // Toggle myDIV1(menu, nav bars etc.)
+        // change the colour of the top bars
         var wholeBar = document.getElementById("myDIV1");
         var topBar = wholeBar.getElementsByClassName("topbar")[0];
-        topBar.classList.toggle("topbar-toggle");
         var blogHeader = wholeBar.getElementsByClassName("blogHeader")[0];
-        blogHeader.classList.toggle("blogHeader-toggle");
         var navBar = wholeBar.getElementsByClassName("navBar")[0];
+        topBar.classList.toggle("topbar-toggle");
+        blogHeader.classList.toggle("blogHeader-toggle");
         navBar.classList.toggle("navBar-toggle");
-        // change the colours of the buttons in the navbar
+
+        // change the colour of the buttons in the navbar
         for (var i = 0; i < document.getElementsByTagName("button").length; i++) {
           document.getElementsByTagName("button")[i].classList.toggle("button-toggle");
         }
+
         // change the colour of the links
         for (var i = 0; i < document.getElementsByTagName("a").length; i++) {
           document.getElementsByTagName("a")[i].classList.toggle("a-toggle");
         }
+
+        // Toggle myDIV2(content body) colour 
         // I don't know if the sidebar is considered green
-        // but I made it so that it changes its colour when toggle
+        // but I made it change its colour when toggle
         var contentbody = document.getElementById("myDIV2");
         var sidebar = contentbody.getElementsByClassName("sidebar")[0];
         sidebar.classList.toggle("sidebar-toggle");
 
         // change the colour of the greenLine
         var greenline = contentbody.getElementsByClassName("greenLine")[0];
-        greenline.classList.toggle("greenLine-toggle");
         var greenline2 = contentbody.getElementsByClassName("greenLine")[1];
+        greenline.classList.toggle("greenLine-toggle");
         greenline2.classList.toggle("greenLine-toggle");
 
+        // Toggle myDIV3(footer) colour 
         // change the colour of the footer
         var footer = document.getElementById("myDIV3");
         footer.classList.toggle("footer-toggle");
@@ -294,15 +305,9 @@
 
         // change h4 colour in footer
         var rightf = footer.getElementsByClassName("footerRight")[0];
-        rightf
-          .getElementsByClassName("footer-links")[0]
-          .classList.toggle("footer-links-toggle");
-
         var leftf = footer.getElementsByClassName("footerLeft")[0];
-        console.log(leftf);
-        leftf
-          .getElementsByClassName("footer-links")[0]
-          .classList.toggle("footer-links-toggle");
+        rightf.getElementsByClassName("footer-links")[0].classList.toggle("footer-links-toggle");
+        leftf.getElementsByClassName("footer-links")[0].classList.toggle("footer-links-toggle");
       }
     </script>
     <div id="myDIV1" class="wholeBar">
