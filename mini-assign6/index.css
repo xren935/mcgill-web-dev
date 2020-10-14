@@ -1,0 +1,249 @@
+/*Formatting for the links */
+a {
+  color: #21af1c;
+}
+
+/* added */
+.a-toggle {
+  color: #2ed4f9ea;
+}
+
+/* Formatting for the HEADER */
+.wholeBar {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0px;
+}
+
+.topbar {
+  background-color: #0c4644;
+  height: 15px;
+  font-size: 13px;
+  padding: 5px;
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+/* added */
+.topbar-toggle {
+  background-color: #0033cc;
+}
+
+/* Aligns text in topmost bar to right and left */
+#right {
+  float: left;
+}
+
+#left {
+  float: right;
+}
+
+.blogHeader {
+  background-color: #038363;
+  padding: 25px;
+  padding-left: 75px;
+  margin-bottom: 0px;
+  color: white;
+}
+
+/* added */
+.blogHeader-toggle {
+  background-color: #4d79ff;
+}
+
+.navBar {
+  background-color: #87b891;
+  height: 40px;
+  padding-left: 75px;
+  color: black;
+  margin-top: 0px;
+}
+
+.navBar-toggle {
+  background-color: #80aaff;
+}
+
+button {
+  background-color: #87b891;
+  font-size: 20px;
+  text-align: center;
+  height: 40px;
+  padding-right: 40px;
+  border: none;
+}
+
+button:hover {
+  background-color: whitesmoke;
+}
+
+.button-toggle {
+  background-color: #80aaff;
+}
+
+/*Formatting for the SIDEBAR*/
+.sidebar {
+  display: inline;
+  width: 20vw;
+  height: auto;
+  float: right;
+  background-color: #d8dcd4;
+  font-size: 13px;
+  margin-top: -16px;
+  /* margin-top: -8px; */
+}
+
+/* added */
+.sidebar-toggle {
+  background-color: #86a7e9c7;
+}
+
+.sidebarContent {
+  margin-top: 25px;
+  margin-left: 15px;
+  width: auto;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar a {
+  color: black;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: aquamarine;
+}
+
+.sidebarContent ul {
+  list-style-type: none;
+  margin-right: 0 px;
+}
+
+/* Formatting for the ARTICLES of the blog */
+.content h2 {
+  font-size: 22px;
+}
+
+.content {
+  margin-left: 75px;
+  /* width: 400; */
+  width: 60vw;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.content .author {
+  font-size: 11px;
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+
+.content a {
+  text-decoration: none;
+}
+
+.content .copy {
+  font-size: 13px;
+  margin-top: 0px;
+}
+
+ul,
+ol {
+  font-size: 13px;
+}
+
+ol {
+  margin: -10px;
+}
+
+h2 {
+  margin-bottom: 0px;
+}
+
+/*Formatting green line*/
+.greenLine {
+  margin-left: 30px;
+  border-left: 3px solid green;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+/* added */
+.greenLine-toggle {
+  border-left: 3px solid rgb(56, 153, 228);
+}
+
+/*Formatting for the FOOTER*/
+.footer {
+  width: 100%;
+  height: 20vh;
+  background-color: #0c4644;
+  color: white;
+  display: block;
+  clear: both;
+  /* margin: -10px; */
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 1px;
+  padding-left: 12px;
+}
+
+/* added */
+.footer-toggle {
+  background-color: #0033cc;
+}
+
+.footer-links {
+  color: #60da8c;
+  margin-top: 17px;
+  font-size: 14px;
+  margin-bottom: 7px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* added */
+.footer-links-toggle {
+  color: rgb(0, 187, 255);
+}
+
+.footerRight {
+  margin-left: 75px;
+  padding-bottom: 20px;
+  float: left;
+  padding-right: 40px;
+}
+
+.footer h4 {
+  color: #60da8c;
+  margin-top: 17px;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.footer p {
+  font-size: 11px;
+  margin: 0px;
+  margin-bottom: 2px;
+}
+
+.footerLeft {
+  float: left;
+}
+
+.copyright {
+  float: right;
+  text-align: right;
+  color: #60da8c;
+  padding-right: 75px;
+  margin-top: 17px;
+}
+
+/* added */
+.copyright-toggle {
+  color: rgb(0, 187, 255);
+}
+
+.footer a {
+  color: White;
+  text-decoration: none;
+}
