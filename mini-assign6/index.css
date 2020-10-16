@@ -17,11 +17,12 @@ a {
 
 .topbar {
   background-color: #0c4644;
-  height: 15px;
+  height: 6%;
   font-size: 13px;
   padding: 5px;
   padding-left: 75px;
   padding-right: 75px;
+  padding-bottom: 1em;
 }
 
 /* added */
@@ -38,6 +39,12 @@ a {
   float: right;
 }
 
+@media screen and (max-width: 700px) {
+  #left {
+    float: left; 
+  }
+}
+
 .blogHeader {
   background-color: #038363;
   padding: 25px;
@@ -51,20 +58,99 @@ a {
   background-color: #4d79ff;
 }
 
+.topnav {
+  overflow: hidden;
+  background-color: #87b891;
+  padding-left: 75px;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding-right: 40px;
+  padding-top: 10px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
 .navBar {
   background-color: #87b891;
   height: 40px;
   padding-left: 75px;
   color: black;
   margin-top: 0px;
+
+  overflow: hidden;
+  background-color: black;
 }
 
 .navBar-toggle {
   background-color: #80aaff;
 }
 
-button {
-  background-color: #87b891;
+@media screen and (max-width: 600px) {
+  .navBar .responsive {
+    position: relative;
+    background-color: red;
+  }
+  .navBar .responsive .icon {
+    position: absolute; 
+    right: 0;
+    top: 0;
+  }
+  .navBar .responsive button {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navBar button:not(first-child) {display: none;}
+  .navBar .icon {
+    float: right;
+    display: block;
+  }
+}
+
+.navBar button {
+  float: left;
+  display: block;
+  /* background-color: #87b891; */
+  background-color: blueviolet;
   font-size: 20px;
   text-align: center;
   height: 40px;
@@ -72,8 +158,12 @@ button {
   border: none;
 }
 
-button:hover {
-  background-color: whitesmoke;
+.navBar button:hover {
+  background-color: rgba(245, 245, 245, 0.57);
+}
+
+.navBar button.active {
+  background-color: rgb(245, 245, 245);
 }
 
 .button-toggle {
@@ -90,6 +180,26 @@ button:hover {
   font-size: 13px;
   margin-top: -16px;
   /* margin-top: -8px; */
+}
+
+.w3-dropdown-content {
+  cursor: auto;
+  color: #000;
+  background-color: #d8dcd4;
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+.w3-dropdown-content w3-bar-block {
+  float: right;
+}
+@media screen and (max-width: 600px) {
+  .sidebar {
+    background-color: white;
+  }
 }
 
 /* added */
@@ -181,7 +291,6 @@ h2 {
   color: white;
   display: block;
   clear: both;
-  /* margin: -10px; */
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 1px;
   padding-left: 12px;
@@ -207,10 +316,10 @@ h2 {
 }
 
 .footerRight {
-  margin-left: 75px;
+  margin-left: 3vw;
   padding-bottom: 20px;
   float: left;
-  padding-right: 40px;
+  padding-right: 30px;
 }
 
 .footer h4 {
@@ -224,6 +333,7 @@ h2 {
   font-size: 11px;
   margin: 0px;
   margin-bottom: 2px;
+  text-align: left;
 }
 
 .footerLeft {
@@ -231,12 +341,16 @@ h2 {
 }
 
 .copyright {
-  float: right;
+  float: left;
+  align-items: right;
+  margin-left: 50vw;
   text-align: right;
   color: #60da8c;
   padding-right: 75px;
   margin-top: 17px;
 }
+
+
 
 /* added */
 .copyright-toggle {

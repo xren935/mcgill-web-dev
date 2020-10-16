@@ -1,331 +1,441 @@
 <doctype !html>
   <html>
+    <head>
+      <title>My Blog</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <link rel="stylesheet" type="text/css" href="index.css" />
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <style type="text/css">
+        /* Could've put style here  */
+      </style>
+    </head>
+    <body>
+      <script>
+        function ChangeColour() {
+          // Toggle myDIV1(menu, nav bars etc.)
+          // change the colour of the top bars
+          var wholeBar = document.getElementById("myDIV1");
+          var topBar = wholeBar.getElementsByClassName("topbar")[0];
+          var blogHeader = wholeBar.getElementsByClassName("blogHeader")[0];
+          var navBar = wholeBar.getElementsByClassName("topnav")[0];
+          topBar.classList.toggle("topbar-toggle");
+          blogHeader.classList.toggle("blogHeader-toggle");
+          navBar.classList.toggle("navBar-toggle");
 
-  <head>
-    <title>My Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <style type="text/css">
-      /* Could've put style here  */
-    </style>
-  </head>
-  <body>
-    <script>
-      function ChangeColour() {
-        // Toggle myDIV1(menu, nav bars etc.)
-        // change the colour of the top bars
-        var wholeBar = document.getElementById("myDIV1");
-        var topBar = wholeBar.getElementsByClassName("topbar")[0];
-        var blogHeader = wholeBar.getElementsByClassName("blogHeader")[0];
-        var navBar = wholeBar.getElementsByClassName("navBar")[0];
-        topBar.classList.toggle("topbar-toggle");
-        blogHeader.classList.toggle("blogHeader-toggle");
-        navBar.classList.toggle("navBar-toggle");
+          // change the colour of the buttons in the navbar
+          for (
+            var i = 0;
+            i < document.getElementsByTagName("button").length;
+            i++
+          ) {
+            document
+              .getElementsByTagName("button")
+              [i].classList.toggle("button-toggle");
+          }
 
-        // change the colour of the buttons in the navbar
-        for (var i = 0; i < document.getElementsByTagName("button").length; i++) {
-          document.getElementsByTagName("button")[i].classList.toggle("button-toggle");
+          // change the colour of the links
+          for (var i = 0; i < document.getElementsByTagName("a").length; i++) {
+            document.getElementsByTagName("a")[i].classList.toggle("a-toggle");
+          }
+
+          // Toggle myDIV2(content body) colour
+          // I don't know if the sidebar is considered green
+          // but I made it change its colour when toggle
+          var contentbody = document.getElementById("myDIV2");
+          var sidebar = contentbody.getElementsByClassName("sidebar")[0];
+          var sidebarcontent = sidebar.getElementsByClassName("w3-dropdown-hover")[0];
+          sidebarcontent.classList.toggle("sidebar-toggle");
+
+          // change the colour of the greenLine
+          var greenline = contentbody.getElementsByClassName("greenLine")[0];
+          var greenline2 = contentbody.getElementsByClassName("greenLine")[1];
+          greenline.classList.toggle("greenLine-toggle");
+          greenline2.classList.toggle("greenLine-toggle");
+
+          // Toggle myDIV3(footer) colour
+          // change the colour of the footer
+          var footer = document.getElementById("myDIV3");
+          footer.classList.toggle("footer-toggle");
+
+          // change the copyright color
+          var copyright = footer.getElementsByClassName("copyright")[0];
+          copyright.classList.toggle("copyright-toggle");
+
+          // change h4 colour in footer
+          var rightf = footer.getElementsByClassName("footerRight")[0];
+          var leftf = footer.getElementsByClassName("footerLeft")[0];
+          rightf
+            .getElementsByClassName("footer-links")[0]
+            .classList.toggle("footer-links-toggle");
+          leftf
+            .getElementsByClassName("footer-links")[0]
+            .classList.toggle("footer-links-toggle");
         }
 
-        // change the colour of the links
-        for (var i = 0; i < document.getElementsByTagName("a").length; i++) {
-          document.getElementsByTagName("a")[i].classList.toggle("a-toggle");
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
         }
-
-        // Toggle myDIV2(content body) colour 
-        // I don't know if the sidebar is considered green
-        // but I made it change its colour when toggle
-        var contentbody = document.getElementById("myDIV2");
-        var sidebar = contentbody.getElementsByClassName("sidebar")[0];
-        sidebar.classList.toggle("sidebar-toggle");
-
-        // change the colour of the greenLine
-        var greenline = contentbody.getElementsByClassName("greenLine")[0];
-        var greenline2 = contentbody.getElementsByClassName("greenLine")[1];
-        greenline.classList.toggle("greenLine-toggle");
-        greenline2.classList.toggle("greenLine-toggle");
-
-        // Toggle myDIV3(footer) colour 
-        // change the colour of the footer
-        var footer = document.getElementById("myDIV3");
-        footer.classList.toggle("footer-toggle");
-
-        // change the copyright color
-        var copyright = footer.getElementsByClassName("copyright")[0];
-        copyright.classList.toggle("copyright-toggle");
-
-        // change h4 colour in footer
-        var rightf = footer.getElementsByClassName("footerRight")[0];
-        var leftf = footer.getElementsByClassName("footerLeft")[0];
-        rightf.getElementsByClassName("footer-links")[0].classList.toggle("footer-links-toggle");
-        leftf.getElementsByClassName("footer-links")[0].classList.toggle("footer-links-toggle");
-      }
-    </script>
-    <div id="myDIV1" class="wholeBar">
-      <!-- Topmost bar of the webpage -->
-      <div class="topbar">
-        <div id="right">
-          <span style="color: white">Welcome, Guest &amp;nbsp </span>
-          <a id="link" href="https://www.w3schools.com/howto/howto_css_login_form.asp">Login</a>
-          <a href="https://www.wikihow.com/Make-a-Signup-Sheet-on-Google-Docs">Sign
-            Up</a>
+      </script>
+      <div id="myDIV1" class="wholeBar">
+        <!-- Topmost bar of the webpage -->
+        <div class="topbar">
+          <div id="right">
+            <span style="color: white">Welcome, Guest &amp;nbsp </span>
+            <a
+              id="link"
+              href="https://www.w3schools.com/howto/howto_css_login_form.asp"
+              >Login</a
+            >
+            <a href="https://www.wikihow.com/Make-a-Signup-Sheet-on-Google-Docs"
+              >Sign Up</a
+            >
+          </div>
+          <div id="left">
+            <span style="color: white">Stay Updated: &amp;nbsp</span>
+            <a href="https://www.archives.gov/research/military/air-force/ufos"
+              >Subscribe via RSS Email Updates</a
+            >
+          </div>
         </div>
-        <div id="left">
-          <span style="color: white">Stay Updated: &amp;nbsp</span>
-          <a href="https://www.archives.gov/research/military/air-force/ufos">Subscribe
-            via RSS Email Updates</a>
+
+        <!-- Main, middle bar of the webpage -->
+        <div class="blogHeader">
+          <span style="font-size: 40px">My Blog &nbsp;</span>
+          <span style="font-size: 15px"> Description of My Blog</span>
+        </div>
+
+        <!-- psuedo nav-bar -->
+        <div class="topnav" id="myTopnav">
+          <a href="#home">HOME</a>
+          <a href="#about">ABOUT</a>
+          <a href="#blog">BLOG</a>
+          <a href="#contact">CONTACT</a>
+          <a href="#color" onclick="ChangeColour()">COLOUR</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        <!-- <div class="navBar" id="myTopNavBar">
+        <button>HOME</button>
+        <button>ABOUT</button>
+        <button>BLOG</button>
+        <button>CONTACT</button>
+        <button onclick="ChangeColour()">COLOUR</button>
+        <button class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></button>
+      </div> -->
+      </div>
+      <p></p>
+      <div id="myDIV2" class="contentBody">
+        <div class="content">
+          <!-- First article -->
+          <h2>Don't Cancel Chuck!</h2>
+          <p class="author">
+            On July 01 in
+            <a href="https://en.wikipedia.org/wiki/General_(United_States)"
+              ><b>General</b></a
+            >
+            tagged
+            <a
+              href="https://www.change.org/p/all-nations-accept-the-fact-that-alien-life-forms-exist"
+              ><b>petitions</b></a
+            >
+            by
+            <a href="https://en.wikipedia.org/wiki/List_of_ufologists"
+              ><b>admin</b></a
+            >
+          </p>
+          <p class="copy">
+            Chuck is an iconic television series and the idea of cancelling such
+            a work of art is ridiculous! Who else will capture the hearts and
+            minds of the American public other than the titular Chuck (played by
+            Zachary Levi) as he embarks on daring yet pleasantly comedic
+            exploits for the CIA and NSA? Who else will so fluidly embody the
+            human condition other than the formerly unmotivated, falsely accused
+            Chuck, thrown into something grander than himself?
+          </p>
+          <div class="greenLine">
+            <p class="copy" style="margin-left: 10px; padding-bottom: 1em">
+              <br />"[Chuck] pays attention to the mechanics of storytelling
+              [...Given] the level of attention paid to all those other
+              things&mdash;emotion, suspense, plotting, character&mdash;Chuck
+              ends up being one of the TV scene's greatest pleasures at the
+              moment."
+            </p>
+          </div>
+          <p class="copy">
+            Chuck is truly an inspiration to us all, as well as one of TV's
+            finer offerings at the moment according to the Chicago Tribune's
+            Maureen Ryan (quoted above). It offers a wonderfuly refreshing mix
+            of comedy and drama - we cannot stand by and let Chuck go quietly
+            into that good night! !e must picket Subway until they force the
+            hand of NBC and continue airing our beloved action-comedy/spy-drama
+            television series!
+            <a href="https://en.wikipedia.org/wiki/Chuck_(TV_series)#Ratings"
+              ><b>Read More</b></a
+            >
+          </p>
+          <!-- Second article -->
+          <h2>Alien Spacecraft found in New Mexico</h2>
+          <p class="author">
+            On July 01 in
+            <a href="https://en.wikipedia.org/wiki/General_(United_States)"
+              ><b>General</b></a
+            >
+            tagged
+            <a
+              href="https://www.change.org/p/all-nations-accept-the-fact-that-alien-life-forms-exist"
+              ><b>petitions</b></a
+            >
+            by
+            <a href="https://en.wikipedia.org/wiki/List_of_ufologists"
+              ><b>admin</b></a
+            >
+          </p>
+          <p class="copy">
+            New Mexico is famous for the Roswell incident, occuring in the
+            summer of 1947. A rancher discovered a sizeable wreckage of a
+            clearly extraterrestrial nature that the military later attempt to
+            explain away as a "weather balloon". We all know that weather
+            doesn't need balloons! What even is a weather balloon??
+          </p>
+          <ul style="margin-left: 10px; font-size: 13px">
+            <li>Fact : aliens (or extra-terrestrials) are completely real.</li>
+            <li>Fact : the military doesn't want us to know this.</li>
+            <li>Fact : we must storm area 51 and free our alien brethren</li>
+          </ul>
+          <p class="copy"></p>
+          <p class="copy">
+            Area 51 quickly became the subject of massive speculation amongst
+            fellow UFOlogists, as it became apparent that the military were
+            covering things up. Several credible sources reported strange green
+            men appearing at local coffee shops - they purportedly were not
+            pleased with the coffee, but tipped generously nonetheless.
+          </p>
+          <p class="copy">
+            <!-- Third article -->
+          </p>
+          <h2>Ghostly Goo in your Kitchen Sink?</h2>
+          <p class="author">
+            On July 01 in
+            <a href="https://en.wikipedia.org/wiki/General_(United_States)"
+              ><b>General</b></a
+            >
+            tagged
+            <a
+              href="https://www.change.org/p/all-nations-accept-the-fact-that-alien-life-forms-exist"
+              ><b>petitions</b></a
+            >
+            by
+            <a href="https://en.wikipedia.org/wiki/List_of_ufologists"
+              ><b>admin</b></a
+            >
+          </p>
+          <p class="copy">
+            <b>Have you noticed a mysterious white slime lately?</b> Ectoplasm
+            is a common occurence when your home is being haunted by a
+            poltergist. This viscuous substance is from another plane of
+            existence, and unfortunately very difficult to clean up.
+            Poltergeists vary drastically in strength and can act as
+            entry-points for more dangerous ghosts, though, so who knows how
+            long you'll be haunted -
+            <a
+              href="https://io9.gizmodo.com/13-things-you-didnt-know-about-poltergeist-1454934341"
+              ><b>best to start cleaning while you can</b></a
+            >
+            before you get smothered in the stuff!
+          </p>
+          <h5>Best two household cleaners for poltergeist slime</h5>
+          <ol>
+            <li>Holy water (if you can't get homemade, store-bought is fine</li>
+            <li>White vinegar</li>
+          </ol>
+          <p class="copy"></p>
+          <div class="greenLine">
+            <p class="copy" style="margin-left: 10px; padding-bottom: 1em">
+              <br />Note that holy water and vinegar should never be combined,
+              as they are on opposite sides of the Heavenly Fluids Spectrum -
+              holy water is on the side of the Blessed, while Vinegar on the
+              side of the Cursed.
+            </p>
+          </div>
+          <h4 style="margin-bottom: -1px">How to clean poltergeist slime</h4>
+          <ul>
+            <li>Please assemble adequate protection prior to touching slime</li>
+            <li>
+              Make sure your spray bottle nozzle is screwed on tightly to avoid
+              extra mess!
+            </li>
+          </ul>
+          <p class="copy"></p>
+          <ol style="padding-bottom: 15px">
+            <li>Put on protective gear and grab spray bottle</li>
+            <li>Stay Pretty Stay Awesome!</li>
+          </ol>
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <div class="w3-dropdown-hover">
+            <button class="w3-button" style="background-color: #d8dcd4; width: 20vw; float: right; height: auto;">
+              More
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="w3-dropdown-content w3-bar-block" style="background-color: #d8dcd4; width: 20vw; float: right; height: auto;">
+                <div class="sidebarContent">
+                  <b>Categories</b> <br /><br />
+                  <ul>
+                    <li>
+                      <a
+                        href="https://en.wikipedia.org/wiki/General_(United_States)"
+                        >General</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://en.wikipedia.org/wiki/List_of_reportedly_haunted_locations_in_Canada"
+                        >Ghost Sightings</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://en.wikipedia.org/wiki/Category:UFO_crashes"
+                        >UFO Crashes</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://content.time.com/time/specials/packages/completelist/0,29569,2008962,00.html"
+                        >Government Coverups</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://content.time.com/time/specials/packages/completelist/0,29569,1860871,00.html"
+                        >International Conspiracies</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </a>
+                <div class="sidebarContent">
+                  <br /><b>Recent Posts</b> <br /><br />
+                  <ul>
+                    <li>
+                      <a href="https://www.bbc.com/news/av/uk-wales-46036219"
+                        >Ghost Sighting in Mansion</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.space.com/ufo-sightings-us-pilots.html"
+                        >UFO picked up by satellites</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://omrf.org/findings/are-there-mutants-among-us/"
+                        >Mutants amoung us?</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.popularmechanics.com/adventure/outdoors/a23622082/bigfoot-history/"
+                        >Bigfoot: Fact or Fiction?</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </a>
+                <div class="sidebarContent">
+                  <br /><b>Archives</b> <br /><br />
+                  <ul>
+                    <li>
+                      <a
+                        href="https://archive.org/search.php?query=date%3AJune%202008"
+                        >June 2008</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://archive.org/search.php?query=date%3AJune%202008"
+                        >May 2008</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://archive.org/search.php?query=date%3Aapril%202008"
+                        >April 2008</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://archive.org/search.php?query=date%3AMarch%202008"
+                        >March 2008</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- Main, middle bar of the webpage -->
-      <div class="blogHeader">
-        <span style="font-size: 40px">My Blog &nbsp;</span>
-        <span style="font-size: 15px"> Description of My Blog</span>
-      </div>
-
-      <!-- psuedo nav-bar -->
-      <div class="navBar">
-        <p>
-          <button>HOME</button>
-          <button>ABOUT</button>
-          <button>BLOG</button>
-          <button>CONTACT</button>
-          <button onclick="ChangeColour()">COLOUR</button>
-        </p>
-      </div>
-    </div>
-    <p></p>
-    <div id="myDIV2" class="contentBody">
-      <div class="content">
-        <!-- First article -->
-        <h2>Don't Cancel Chuck!</h2>
-        <p class="author">
-          On July 01 in
-          <a href="https://en.wikipedia.org/wiki/General_(United_States)"><b>General</b></a>
-          tagged
-          <a
-            href="https://www.change.org/p/all-nations-accept-the-fact-that-alien-life-forms-exist"><b>petitions</b></a>
-          by
-          <a href="https://en.wikipedia.org/wiki/List_of_ufologists"><b>admin</b></a>
-        </p>
-        <p class="copy">
-          Chuck is an iconic television series and the idea of cancelling such
-          a work of art is ridiculous! Who else will capture the hearts and
-          minds of the American public other than the titular Chuck (played by
-          Zachary Levi) as he embarks on daring yet pleasantly comedic
-          exploits for the CIA and NSA? Who else will so fluidly embody the
-          human condition other than the formerly unmotivated, falsely accused
-          Chuck, thrown into something grander than himself?
-        </p>
-        <div class="greenLine">
-          <p class="copy" style="margin-left: 10px; padding-bottom: 1em;">
-            <br />"[Chuck] pays attention to the mechanics of storytelling
-            [...Given] the level of attention paid to all those other
-            things&mdash;emotion, suspense, plotting, character&mdash;Chuck
-            ends up being one of the TV scene's greatest pleasures at the
-            moment."
+      <p></p>
+      <div id="myDIV3" class="footer">
+        <div class="footerRight">
+          <div class="footer-links">Links</div>
+          <p>
+            <a href="https://helpx.adobe.com/ca/photoshop/tutorials.html"
+              >PSDtuts - Photoshop tutorials</a
+            >
+          </p>
+          <p>
+            <a href="https://www.w3schools.com/"
+              >NetTuts - Web development and design tutorials</a
+            >
+          </p>
+          <p>
+            <a href="https://design.tutsplus.com/categories/vector"
+              >VectorTuts - Illustrator and vector tutorials</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://www.wired.com/2010/02/flash_tutorial_for_beginners_-_lesson_1/"
+              >FlashTuts - Adobe Flash tutorials</a
+            >
           </p>
         </div>
-        <p class="copy">
-          Chuck is truly an inspiration to us all, as well as one of TV's
-          finer offerings at the moment according to the Chicago Tribune's
-          Maureen Ryan (quoted above). It offers a wonderfuly refreshing mix
-          of comedy and drama - we cannot stand by and let Chuck go quietly
-          into that good night! !e must picket Subway until they force the
-          hand of NBC and continue airing our beloved action-comedy/spy-drama
-          television series!
-          <a href="https://en.wikipedia.org/wiki/Chuck_(TV_series)#Ratings"><b>Read
-              More</b></a>
-        </p>
-        <!-- Second article -->
-        <h2>Alien Spacecraft found in New Mexico</h2>
-        <p class="author">
-          On July 01 in
-          <a href="https://en.wikipedia.org/wiki/General_(United_States)"><b>General</b></a>
-          tagged
-          <a
-            href="https://www.change.org/p/all-nations-accept-the-fact-that-alien-life-forms-exist"><b>petitions</b></a>
-          by
-          <a href="https://en.wikipedia.org/wiki/List_of_ufologists"><b>admin</b></a>
-        </p>
-        <p class="copy">
-          New Mexico is famous for the Roswell incident, occuring in the
-          summer of 1947. A rancher discovered a sizeable wreckage of a
-          clearly extraterrestrial nature that the military later attempt to
-          explain away as a "weather balloon". We all know that weather
-          doesn't need balloons! What even is a weather balloon??
-        </p>
-        <ul style="margin-left: 10px; font-size: 13px">
-          <li>Fact : aliens (or extra-terrestrials) are completely real.</li>
-          <li>Fact : the military doesn't want us to know this.</li>
-          <li>Fact : we must storm area 51 and free our alien brethren</li>
-        </ul>
-        <p class="copy"></p>
-        <p class="copy">
-          Area 51 quickly became the subject of massive speculation amongst
-          fellow UFOlogists, as it became apparent that the military were
-          covering things up. Several credible sources reported strange green
-          men appearing at local coffee shops - they purportedly were not
-          pleased with the coffee, but tipped generously nonetheless.
-        </p>
-        <p class="copy">
-          <!-- Third article -->
-        </p>
-        <h2>Ghostly Goo in your Kitchen Sink?</h2>
-        <p class="author">
-          On July 01 in
-          <a href="https://en.wikipedia.org/wiki/General_(United_States)"><b>General</b></a>
-          tagged
-          <a
-            href="https://www.change.org/p/all-nations-accept-the-fact-that-alien-life-forms-exist"><b>petitions</b></a>
-          by
-          <a href="https://en.wikipedia.org/wiki/List_of_ufologists"><b>admin</b></a>
-        </p>
-        <p class="copy">
-          <b>Have you noticed a mysterious white slime lately?</b> Ectoplasm
-          is a common occurence when your home is being haunted by a
-          poltergist. This viscuous substance is from another plane of
-          existence, and unfortunately very difficult to clean up.
-          Poltergeists vary drastically in strength and can act as
-          entry-points for more dangerous ghosts, though, so who knows how
-          long you'll be haunted -
-          <a href="https://io9.gizmodo.com/13-things-you-didnt-know-about-poltergeist-1454934341"><b>best
-              to start cleaning while you can</b></a>
-          before you get smothered in the stuff!
-        </p>
-        <h5>Best two household cleaners for poltergeist slime</h5>
-        <ol>
-          <li>Holy water (if you can't get homemade, store-bought is fine</li>
-          <li>White vinegar</li>
-        </ol>
-        <p class="copy"></p>
-        <div class="greenLine">
-          <p class="copy" style="margin-left: 10px; padding-bottom: 1em;">
-            <br />Note that holy water and vinegar should never be combined,
-            as they are on opposite sides of the Heavenly Fluids Spectrum -
-            holy water is on the side of the Blessed, while Vinegar on the
-            side of the Cursed.
+        <div class="footerLeft">
+          <div class="footer-links">Follow our updates</div>
+          <p>
+            <a
+              href="https://www.digitaltrends.com/computing/what-is-an-rss-feed/"
+              >Subscribe to RSS Feed</a
+            >
+          </p>
+          <p><a href="https://en.wikipedia.org/wiki/RSS">What is RSS?</a></p>
+          <p>
+            <a href="https://pm.gc.ca/en/connect/subscribe">Email Updates</a>
           </p>
         </div>
-        <h4 style="margin-bottom: -1px;">How to clean poltergeist slime</h4>
-        <ul>
-          <li>
-            Please assemble adequate protection prior to touching slime
-          </li>
-          <li>
-            Make sure your spray bottle nozzle is screwed on tightly to avoid extra mess!
-          </li>
-        </ul>
-        <p class="copy"></p>
-        <ol style="padding-bottom: 15px;">
-          <li>Put on protective gear and grab spray bottle</li>
-          <li>Stay Awesome!</li>
-        </ol>
-      </div>
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <div class="sidebarContent">
-          <b>Categories</b> <br /><br />
-          <ul>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/General_(United_States)">General</a>
-            </li>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/List_of_reportedly_haunted_locations_in_Canada">Ghost
-                Sightings</a>
-            </li>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/Category:UFO_crashes">UFO
-                Crashes</a>
-            </li>
-            <li>
-              <a href="http://content.time.com/time/specials/packages/completelist/0,29569,2008962,00.html">Government
-                Coverups</a>
-            </li>
-            <li>
-              <a href="http://content.time.com/time/specials/packages/completelist/0,29569,1860871,00.html">International
-                Conspiracies</a>
-            </li>
-          </ul>
-          <br /><b>Recent Posts</b> <br /><br />
-          <ul>
-            <li>
-              <a href="https://www.bbc.com/news/av/uk-wales-46036219">Ghost
-                Sighting in Mansion</a>
-            </li>
-            <li>
-              <a href="https://www.space.com/ufo-sightings-us-pilots.html">UFO
-                picked up by satellites</a>
-            </li>
-            <li>
-              <a href="https://omrf.org/findings/are-there-mutants-among-us/">Mutants
-                amoung us?</a>
-            </li>
-            <li>
-              <a href="https://www.popularmechanics.com/adventure/outdoors/a23622082/bigfoot-history/">Bigfoot:
-                Fact or Fiction?</a>
-            </li>
-          </ul>
-          <br /><b>Archives</b> <br /><br />
-          <ul>
-            <li>
-              <a href="https://archive.org/search.php?query=date%3AJune%202008">June
-                2008</a>
-            </li>
-            <li>
-              <a href="https://archive.org/search.php?query=date%3AJune%202008">May
-                2008</a>
-            </li>
-            <li>
-              <a href="https://archive.org/search.php?query=date%3Aapril%202008">April
-                2008</a>
-            </li>
-            <li>
-              <a href="https://archive.org/search.php?query=date%3AMarch%202008">March
-                2008</a>
-            </li>
-          </ul>
+        <div class="copyright">
+          <p>Copyright &copy; 2020</p>
+          <p>All Rights Reserved</p>
         </div>
       </div>
-    </div>
-    <p></p>
-    <div id="myDIV3" class="footer">
-      <div class="footerRight">
-        <div class="footer-links">Links</div>
-        <p>
-          <a href="https://helpx.adobe.com/ca/photoshop/tutorials.html">PSDtuts
-            - Photoshop tutorials</a>
-        </p>
-        <p>
-          <a href="https://www.w3schools.com/">NetTuts - Web development and
-            design tutorials</a>
-        </p>
-        <p>
-          <a href="https://design.tutsplus.com/categories/vector">VectorTuts -
-            Illustrator and vector tutorials</a>
-        </p>
-        <p>
-          <a href="https://www.wired.com/2010/02/flash_tutorial_for_beginners_-_lesson_1/">FlashTuts
-            - Adobe Flash tutorials</a>
-        </p>
-      </div>
-      <div class="footerLeft">
-        <div class="footer-links">Follow our updates</div>
-        <p>
-          <a href="https://www.digitaltrends.com/computing/what-is-an-rss-feed/">Subscribe
-            to RSS Feed</a>
-        </p>
-        <p><a href="https://en.wikipedia.org/wiki/RSS">What is RSS?</a></p>
-        <p>
-          <a href="https://pm.gc.ca/en/connect/subscribe">Email Updates</a>
-        </p>
-      </div>
-      <div class="copyright">
-        <p>Copyright &copy; 2009</p>
-        <p>All Rights Reserved</p>
-      </div>
-    </div>
-  </body>
-
+    </body>
   </html>
 </doctype>
