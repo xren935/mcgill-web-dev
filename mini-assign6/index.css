@@ -1,11 +1,22 @@
 /*Formatting for the links */
-a {
+/* a {
+  color: #21af1c;
+} */
+.author a {
+  color: #21af1c;
+}
+
+.content .copy a {
   color: #21af1c;
 }
 
 /* added */
-.a-toggle {
+.a-toggle { 
   color: #2ed4f9ea;
+}
+
+#readmore {
+  color: #21af1c;
 }
 
 /* Formatting for the HEADER */
@@ -25,6 +36,10 @@ a {
   padding-bottom: 1em;
 }
 
+/* .topbar a{
+  color: yellowgreen;
+} */
+
 /* added */
 .topbar-toggle {
   background-color: #0033cc;
@@ -33,10 +48,20 @@ a {
 /* Aligns text in topmost bar to right and left */
 #right {
   float: left;
+  color: yellowgreen;
 }
+
+/* .content .author a {
+  color: #21af1c;
+} */
 
 #left {
   float: right;
+  color: yellowgreen;
+}
+
+#left a {
+  color: #21af1c;
 }
 
 @media screen and (max-width: 700px) {
@@ -51,6 +76,14 @@ a {
   padding-left: 75px;
   margin-bottom: 0px;
   color: white;
+  animation-name: color-switch; 
+  animation-duration: 2s;
+  animation-iteration-count: 100;
+}
+
+@keyframes color-switch {
+  from {color: whitesmoke;}
+  to {color: black;}
 }
 
 /* added */
@@ -172,20 +205,23 @@ a {
 
 /*Formatting for the SIDEBAR*/
 .sidebar {
-  display: inline;
+  /* display: inline; */
   width: 20vw;
   height: auto;
   float: right;
-  background-color: red;
+  /* background-color: red; */
   font-size: 13px;
   margin-top: -16px;
   /* margin-top: -8px; */
 }
 
 .w3-dropdown-content {
+  float: right; 
+  width: 20vw; 
+  height: auto;
   cursor: auto;
   color: #000;
-  background-color: #d8dcd4;
+  /* background-color: #d8dcd4; */
   display: none;
   position: absolute;
   min-width: 160px;
@@ -193,10 +229,30 @@ a {
   padding: 0;
   z-index: 1;
 }
+
+.w3-dropdown-hover {
+  background-color: green;
+  width: 20vw;
+}
+
+
 .w3-dropdown-content w3-bar-block {
   float: right;
+  width: 20vw;
+
+  height: auto; 
+  position: relative;
+
+  /* margin-top: 25px;
+  margin-left: 0.3vw;
+  padding-right: 0.5vw;
+  /* float: left; */
+  text-align: left;
   width: auto;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif; 
 }
+
 @media screen and (max-width: 600px) {
   .sidebar {
     background-color: white;
@@ -213,18 +269,41 @@ a {
 } */
 
 .sidebarContent {
-  /* background-color: #87b891a3; */
+  background-color: #87b891a3;
   margin-top: 25px;
-  margin-left: 0.5vw;
+  margin-left: 0.3vw;
+  padding-right: 0.5vw;
+  /* float: left; */
+  text-align: left;
   width: auto;
   height: auto;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@media screen and (max-width: 700px) {
+  .sidebarContent {
+    display: block;
+    width: auto;
+    text-align: left;
+    
+  }
+}
 
+.sidebar li {
+  text-align: left;
+  position: relative;
+  display: flex;
+}
+
+.sidebar ul {
+  padding-inline-start: 20%;
+  text-align: left;
+  display: block;
+}
 .sidebar a {
   color: black;
   text-decoration: none;
+  /* text-align: left; */
 }
 
 .sidebar a:hover {
@@ -234,6 +313,8 @@ a {
 .sidebarContent ul {
   list-style-type: none;
   margin-right: 0 px;
+  /* text-align: left; */
+  display: block;
 }
 
 /* Formatting for the ARTICLES of the blog */
@@ -290,13 +371,20 @@ h2 {
   border-left: 3px solid rgb(56, 153, 228);
 }
 
+.greenLine p {
+  color: yellowgreen;
+  place-items: center;
+}
+
 /*Formatting for the FOOTER*/
 .footer {
-  width: 100%;
-  height: 20vh;
+  /* grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); */
+  /* justify-content: space-between; */
+  grid-template-columns: repeat(12, 1fr);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   background-color: #0c4644;
   color: white;
-  display: block;
   clear: both;
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 1px;
@@ -323,10 +411,11 @@ h2 {
 }
 
 .footerRight {
-  margin-left: 3vw;
+  grid-column: 1 / 5;
   padding-bottom: 20px;
   float: left;
-  padding-right: 30px;
+  padding-left: 70px;
+  /* padding-right: 30px; */
 }
 
 .footer h4 {
@@ -344,17 +433,19 @@ h2 {
 }
 
 .footerLeft {
+  grid-column: 6 / 9;
   float: left;
 }
 
 .copyright {
-  float: left;
-  align-items: right;
-  margin-left: 50vw;
-  text-align: right;
   color: #60da8c;
-  padding-right: 75px;
+  grid-column: 12 / 13;
+  float: right;
+  padding-right: 5px;
   margin-top: 17px;
+
+  /* padding-right: 75px;
+  margin-top: 17px; */
 }
 
 

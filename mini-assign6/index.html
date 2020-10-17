@@ -15,7 +15,76 @@
 
   <body>
     <script>
+      // overwrite the default stylesheet for the dropdown menu 
+      var isGreen = true;
       function ChangeColour() {
+        if(isGreen){
+          document.getElementsByClassName("sidebar")[0].style.backgroundColor = "#86a7e9c7";
+          document.getElementsByClassName("w3-dropdown-content")[0].style.backgroundColor = "#86a7e9c7";
+          document.getElementsByClassName("w3-dropdown-hover")[0].style.backgroundColor = "#86a7e9c7";
+          document.getElementsByClassName("w3-dropdown-content w3-bar-block")[0].style.position = "relative";
+          document.getElementsByClassName("w3-button")[0].style.backgroundColor = "#86a7e9c7";
+          document.getElementById("readmore").style.color = "#2ed4f9ea"; 
+          document.getElementsByClassName("copy")[7].getElementsByTagName("a")[0].style.color = "#2ed4f9ea";
+          var sidebarcontent = document.getElementsByClassName("sidebarContent");
+          document.getElementsByClassName("topnav")[0].style.backgroundColor = "#86a7e9c7";
+          for(let i=0; i<document.getElementsByClassName("greenLine").length; i++){
+            var currLine = document.getElementsByClassName("greenLine")[i];
+            for(let j=0; j<currLine.getElementsByClassName("copy").length; j++){
+              var currQuote = currLine.getElementsByClassName("copy")[j].style.color = "cornflowerblue";
+            }
+          }
+
+          for(var i=0; i<document.getElementsByClassName("author").length; i++){
+  var currAuthor = document.getElementsByClassName("author")[i]; 
+  for(var j=0; j<currAuthor.getElementsByTagName("a").length; j++){
+    currAuthor.getElementsByTagName("a")[j].style.color = "#2ed4f9ea";
+  }
+}
+ 
+          // document.getElementsByClassName("greenLine")[0].getElementsByClassName("copy")[0].style.color = "cornflowerblue";
+          for(let i=0; i<sidebarcontent.length; i++){
+            sidebarcontent[i].style.backgroundColor = "#86a7e9c7";
+          }
+
+          // for (var i = 0; i < document.getElementsByClassName("author").length; i++) {
+          //   document.getElementsByTagName("author")[i].style.color = "red";
+          // }
+          // style quotes 
+          // for(let i=0; i< document.getElementsByClassName("greenLine").length; i++){
+          //   document.getElementsByClassName("greenLine")[i].getElementsByClassName("copy").style.color = "#00FFFF";
+          // }
+          isGreen = false;
+        }else{
+          document.getElementsByClassName("sidebar")[0].style.backgroundColor = "#7dbd8ad0";
+          document.getElementsByClassName("w3-dropdown-content w3-bar-block")[0].style.position = "relative";
+          document.getElementsByClassName("w3-dropdown-content")[0].style.backgroundColor = "#7dbd8ad0";
+          document.getElementsByClassName("w3-dropdown-hover")[0].style.backgroundColor = "#7dbd8ad0";
+          document.getElementsByClassName("w3-button")[0].style.backgroundColor = "#7dbd8ad0";
+          document.getElementsByClassName("topnav")[0].style.backgroundColor = "#7dbd8ad0";
+          document.getElementById("readmore").style.color = "#21af1c"; 
+          document.getElementsByClassName("copy")[7].getElementsByTagName("a")[0].style.color = "#21af1c";
+          var sidebarcontent = document.getElementsByClassName("sidebarContent");
+          for(let i=0; i<document.getElementsByClassName("greenLine").length; i++){
+            var currLine = document.getElementsByClassName("greenLine")[i];
+            for(let j=0; j<currLine.getElementsByClassName("copy").length; j++){
+              var currQuote = currLine.getElementsByClassName("copy")[j].style.color = "yellowgreen";
+            }
+          }
+          for(var i=0; i<document.getElementsByClassName("author").length; i++){
+  var currAuthor = document.getElementsByClassName("author")[i]; 
+  for(var j=0; j<currAuthor.getElementsByTagName("a").length; j++){
+    currAuthor.getElementsByTagName("a")[j].style.color = "#21af1c";
+  }
+}
+          for(let i=0; i<sidebarcontent.length; i++){
+            sidebarcontent[i].style.backgroundColor = "#7dbd8ad0";
+          }
+          isGreen = true;
+        }
+// 
+// document.getElementsByClassName("author")[1].getElementsByTagName("a")[0].style.color = "red";
+
         // Toggle myDIV1(menu, nav bars etc.)
         // change the colour of the top bars
         var wholeBar = document.getElementById("myDIV1");
@@ -42,19 +111,19 @@
           document.getElementsByTagName("a")[i].classList.toggle("a-toggle");
         }
 
+ 
+
         // Toggle myDIV2(content body) colour
         // I don't know if the sidebar is considered green
         // but I made it change its colour when toggle
         var contentbody = document.getElementById("myDIV2");
         var sidebar = contentbody.getElementsByClassName("sidebar")[0];
-        console.log("printing sidebar");
-        console.log(sidebar);
-        var sidecontentpart1 = document.getElementById("side-content1");
-        sidecontentpart1.classList.toggle("sidebar-toggle");
-        var sidecontentpart2 = document.getElementById("side-content2");
-        sidecontentpart2.classList.toggle("sidebar-toggle");
-        var sidecontentpart3 = document.getElementById("side-content3");
-        sidecontentpart3.classList.toggle("sidebar-toggle");
+        // var sidecontentpart1 = document.getElementById("side-content1");
+        // sidecontentpart1.classList.toggle("sidebar-toggle");
+        // var sidecontentpart2 = document.getElementById("side-content2");
+        // sidecontentpart2.classList.toggle("sidebar-toggle");
+        // var sidecontentpart3 = document.getElementById("side-content3");
+        // sidecontentpart3.classList.toggle("sidebar-toggle");
         // console.log(document.getElementsByClassName("w3-dropdown-content w3-bar-block")[0]);
         // document.getElementsByClassName("w3-dropdown-content w3-bar-block")[0].classList.toggle("sidebar-toggle");
 
@@ -106,12 +175,12 @@
       <!-- Topmost bar of the webpage -->
       <div class="topbar">
         <div id="right">
-          <span style="color: white">Welcome, Guest &amp;nbsp </span>
-          <a id="link" href="https://www.w3schools.com/howto/howto_css_login_form.asp">Login</a>
-          <a href="https://www.wikihow.com/Make-a-Signup-Sheet-on-Google-Docs">Sign Up</a>
+          <span style="color: white">Welcome, Guest! &nbsp;</span>
+          <a href="https://www.w3schools.com/howto/howto_css_login_form.asp">Login</a>
+          <a href="https://www.wikihow.com/Make-a-Signup-Sheet-on-Google-Docs">Sign Up </a>
         </div>
         <div id="left">
-          <span style="color: white">Stay Updated: &amp;nbsp</span>
+          <span style="color: white">Stay Updated: &nbsp;</span>
           <a href="https://www.archives.gov/research/military/air-force/ufos">Subscribe via RSS Email Updates</a>
         </div>
       </div>
@@ -182,7 +251,7 @@
           into that good night! !e must picket Subway until they force the
           hand of NBC and continue airing our beloved action-comedy/spy-drama
           television series!
-          <a href="https://en.wikipedia.org/wiki/Chuck_(TV_series)#Ratings"><b>Read More</b></a>
+          <a id="readmore" href="https://en.wikipedia.org/wiki/Chuck_(TV_series)#Ratings"><b>Read More</b></a>
         </p>
         <!-- Second article -->
         <h2>Alien Spacecraft found in New Mexico</h2>
@@ -269,16 +338,16 @@
         </ol>
       </div>
       <!-- Sidebar -->
-      <div class="sidebar" style="background-color: aqua;">
-        <div class="w3-dropdown-hover" style="background-color: aqua;">
+      <div class="sidebar" style="background-color: #7dbd8ad0; width: 20vw; float: right;">
+        <div class="w3-dropdown-hover" style="width: 20vw; float: right; height: auto; background-color: #7dbd8ad0;">
           <!-- style="background-color: #d8dcd4; width: 20vw; float: right; height: auto;" -->
           <button class="w3-button">
             More
             <i class="fa fa-caret-down"></i>
           </button>
-          <div class="w3-dropdown-content w3-bar-block" style="background-color: aqua;  width: 20vw; float: right;">
+          <div class="w3-dropdown-content w3-bar-block" style="position: relative; background-color: #7dbd8ad0;  width: 20vw; height: auto; float: right;">
             <!-- id="side-content1" -->
-            <div class="sidebarContent" id="side-content1">
+            <div class="sidebarContent">
               <b>Categories</b> <br /><br />
               <ul>
                 <li>
@@ -302,7 +371,7 @@
               </ul>
             </div>
             </a>
-            <div class="sidebarContent" id="side-content2">
+            <div class="sidebarContent">
               <br /><b>Recent Posts</b> <br /><br />
               <ul>
                 <li>
@@ -321,7 +390,7 @@
               </ul>
             </div>
             </a>
-            <div class="sidebarContent" id="side-content3">
+            <div class="sidebarContent">
               <br /><b>Archives</b> <br /><br />
               <ul>
                 <li>
