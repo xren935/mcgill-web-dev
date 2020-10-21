@@ -1,0 +1,93 @@
+body {
+    background-color: #eeeeeec9;
+    place-items: center;
+}
+
+h1 {
+    color: #222831; 
+}
+
+h2 {
+    color: #276063; 
+    padding-top: 8px;
+    border-top: 2px dashed rgb(77, 153, 158);
+    text-shadow: 1px 1px #393e46;
+    
+}
+
+/* h3 {
+    color: #393e46;
+} */
+
+input:invalid {
+    border: 2px solid red;
+  }
+  
+/* input:invalid:required {
+    background-image: linear-gradient(to right, rgba(241, 255, 192, 0.776), rgba(218, 209, 92, 0.678));
+} */
+  
+input {
+    border: 2px solid black;
+    display: inline;
+    background-image: linear-gradient(to right, rgba(192, 251, 255, 0.776), rgba(29, 155, 164, 0.678));
+}
+
+input:hover {
+    border: 2px solid black;
+    background-image: linear-gradient(to right, rgba(192, 251, 255, 0.728), rgba(238, 241, 242, 0.678));
+}
+
+.vl {
+    border-left: 6px solid rgb(39, 134, 141);
+    height: 600px;
+    position: absolute;
+    left: 15%;
+    margin-left: 3px;
+}
+
+.field {
+    color: #448d91;
+    display: inline-block;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; 
+    padding-top: 5px;
+    /* text-shadow: 2px 1px #393e46; */
+}
+
+p {
+    display: inline; 
+    color: red;
+    padding-left: 10px;
+    font-weight: bold;
+    /* font-size: x-small; */
+}
+
+/* #fnerrormsg {
+    display: inline; 
+    color: red;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: x-small;
+} */
+
+/* #lnerrormsg {
+    display: inline; 
+    color: red;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: x-small;
+}
+#emailerrormsg {
+    display: inline; 
+    color: red;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: x-small;
+}
+#phoneerrormsg {
+    display: inline; 
+    color: red;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: x-small;
+} */

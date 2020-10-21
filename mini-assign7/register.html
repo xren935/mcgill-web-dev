@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Register</title>
+  <meta name="description" content="The HTML5 Herald">
+  <link rel="stylesheet" href="styles.css" media="screen" type="text/css" />
+
+
+   
+
+  </script>
+  <!-- <style type="text/css"></style> -->
+</head>
+
+<body>
+<script src="scripts.js"></script>
+    <div class="myForm" style="padding-left: 20%;">
+        <div class="vl" display="position: inline"></div>
+        <h1>Registration Form</h1>
+        <form name="myForm" action="" onsubmit = "return myFunction();" method="post">
+            <h3>Please fill in all fields and click Register</h3>
+            <h2>User Information</h2>
+             
+                <div class="field">First name: <input type="text" id="fname"></input></div><p style="font-size: small" id="fnerrormsg"></p><br />
+                <div class="field">Last name: <input type="text" id="lname"></input></div><p style="font-size: small" id="lnerrormsg"></p><br />
+                <div class="field">Email: <input type="text" id="email"></input></div><p style="font-size: small" id="emailerrormsg"></p><br />
+                <div class="field">Phone: <input type="text" id="phone"></input></div><p style="font-size: small" id="phoneerrormsg"></p><br />
+        
+            <h2>Pubilcation</h2>
+            <div class="field">Which book would you like info about? </div>
+            <select name="book">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+            </select>
+            <h2>Operating System</h2>
+            <h3>What OS do you use? </h3>
+            <input type="radio" name="windows" value="windows"><h3 style="display: inline">Windows</h3><span> </span>
+            <input type="radio" name="windows" value="windows"><h3 style="display: inline">MacOS</h3>
+            <input type="radio" name="windows" value="windows"><h3 style="display: inline">Linux</h3>
+            <input type="radio" name="windows" value="windows"><h3 style="display: inline">Other</h3>
+            <br />
+            <!-- <input type="submit" value="Submit" onclick="clicked()"/> -->
+            <p id="demo"></p>
+             <input type="submit" onclick="myFunction(); return false;"></inpuy>
+            </form>
+            <!-- <button type="submit" onClick="myFunction()">Submit</button> -->
+    </div>
+</body>
+</html>
