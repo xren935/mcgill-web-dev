@@ -11,6 +11,7 @@ h2 {
     color: #276063; 
     padding-top: 8px;
     border-top: 2px dashed rgb(77, 153, 158);
+    width: 350px;
     text-shadow: 1px 1px #393e46;
     
 }
