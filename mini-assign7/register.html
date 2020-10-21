@@ -1,53 +1,62 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-
-  <title>Register</title>
-  <meta name="description" content="The HTML5 Herald">
-  <link rel="stylesheet" href="styles.css" media="screen" type="text/css" />
-
-
-   
-
-  </script>
-  <!-- <style type="text/css"></style> -->
+    <title>Register</title>
+    <meta charset=”utf-8” />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css" media="screen" type="text/css" />
+    <script src="scripts.js"></script>
 </head>
 
 <body>
-<script src="scripts.js"></script>
-    <div class="myForm" style="padding-left: 20%;">
+    <div class="flex-container" display="position: inline">
         <div class="vl" display="position: inline"></div>
         <h1>Registration Form</h1>
-        <form name="myForm" action="" onsubmit = "return myFunction();" method="post">
-            <h3>Please fill in all fields and click Register</h3>
+        <form name="myForm" action="" onsubmit="return myFunction();" method="post">
+            <h3><i>Please fill in all fields and click Register</i></h3>
             <h2>User Information</h2>
-             
-                <div class="field">First name: <input type="text" id="fname"></input></div><p style="font-size: small" id="fnerrormsg"></p><br />
-                <div class="field">Last name: <input type="text" id="lname"></input></div><p style="font-size: small" id="lnerrormsg"></p><br />
-                <div class="field">Email: <input type="text" id="email"></input></div><p style="font-size: small" id="emailerrormsg"></p><br />
-                <div class="field">Phone: <input type="text" id="phone"></input></div><p style="font-size: small" id="phoneerrormsg"></p><br />
-        
+            <label for="fname">First name:</label><input type="text" id="fname" pattern="[A-Za-z]"
+                placeholder="i.e. John"></input>
+            <p style="font-size: small" id="fnerrormsg">First Name is required. Please fill it out!</p><br />
+            <label for="lname">Last name:</label><input type="text" id="lname" pattern="[A-Za-z]"
+                placeholder="i.e. Doe"></input>
+            <p style="font-size: small" id="lnerrormsg">Last Name is required. Please fill it out!</p><br />
+            <label for="email">Email:</label><input type="text" id="email" placeholder="i.e. jdoe@gmail.com"></input>
+            <p style="font-size: small" id="emailerrormsg">Email is required. Please fill it out!</p><br />
+            <label for="phone">Phone:</label><input type="tel" id="phone" placeholder="i.e. (123) 456-7890"
+                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"></input>
+            <p style="font-size: small" id="phoneerrormsg">Phone Number is required. Please fill it out!</p><br />
+
             <h2>Pubilcation</h2>
-            <div class="field">Which book would you like info about? </div>
-            <select name="book">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+            <div class="questions">Which book would you like information about? </div>
+            <select class="custom-select" name="book" id="booktype" onchange="validateBook()">
+                <option value="selected" onclick="validateBook()">-- pick a book --</option>
+                <option value="ai" onclick="validateBook()">Artificial Intelligence: A Modern Approach</option>
+                <option value="interview">Crack the Coding Interview</option>
+                <option value="algo">Internet and WWW How to Program</option>
+                <option value="algo">Introduction to Algorithms</option>
+                <option value="structure">Structure and Interpretation of Computer Programs</option>
             </select>
-            <h2>Operating System</h2>
-            <h3>What OS do you use? </h3>
-            <input type="radio" name="windows" value="windows"><h3 style="display: inline">Windows</h3><span> </span>
-            <input type="radio" name="windows" value="windows"><h3 style="display: inline">MacOS</h3>
-            <input type="radio" name="windows" value="windows"><h3 style="display: inline">Linux</h3>
-            <input type="radio" name="windows" value="windows"><h3 style="display: inline">Other</h3>
             <br />
-            <!-- <input type="submit" value="Submit" onclick="clicked()"/> -->
-            <p id="demo"></p>
-             <input type="submit" onclick="myFunction(); return false;"></inpuy>
-            </form>
-            <!-- <button type="submit" onClick="myFunction()">Submit</button> -->
+            <p id="bookmsg" style="padding-left: 0px;">Please select a book!</p>
+
+            <h2>Operating System</h2>
+            <div class="questions">What OS do you use? </div>
+            <div name="os">
+                <input type="radio" id="win" name="curros"><label style="display: inline">Windows</label><i
+                    class="fa fa-windows" style="font-size:24px;color:#285c5f; padding-left: 3px;"></i><span> </span>
+                <input type="radio" id="mac" name="curros"><label style="display: inline">MacOS</label><i
+                    class="fa fa-apple" style="font-size:24px;color:#285c5f; padding-left: 3px;"></i>
+                <input type="radio" id="lin" name="curros"><label style="display: inline">Linux</label><i
+                    class="fa fa-linux" style="font-size:24px;color:#285c5f; padding-left: 3px;"></i>
+                <input type="radio" id="other" name="curros"><label style="display: inline">Other</label>
+            </div>
+            <p id="oserrormsg" style="padding-left: 0px; margin-left: 0px;">Please select an OS!</p>
+            <br />
+            <input class="regButton" type="submit" id="submitButton" onhover="displayPretty();" onclick="myFunction(); return false;" value="Register"></input>
+            <div class="pretty" style="color:#2d5c7c;">I'm a pretty(and interactive) form ^^</div>
+        </form>
     </div>
 </body>
 </html>

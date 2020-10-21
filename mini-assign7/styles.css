@@ -1,6 +1,27 @@
 body {
     background-color: #eeeeeec9;
     place-items: center;
+    width: 800px;
+}
+
+form {
+    display: inline;
+}
+
+.flex-container {
+    background-color: #bfccd53f;
+    /* margin-right: 500px;
+    margin-top: 50px;
+    margin-left: 240px; */
+    margin-left: 250px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.flex-container:hover {
+    background-color: #b5d3e779;
 }
 
 h1 {
@@ -13,25 +34,14 @@ h2 {
     border-top: 2px dashed rgb(77, 153, 158);
     width: 350px;
     text-shadow: 1px 1px #393e46;
-    
 }
 
-/* h3 {
-    color: #393e46;
-} */
-
-input:invalid {
-    border: 2px solid red;
-  }
-  
-/* input:invalid:required {
-    background-image: linear-gradient(to right, rgba(241, 255, 192, 0.776), rgba(218, 209, 92, 0.678));
-} */
-  
 input {
-    border: 2px solid black;
+    border: 2px #1339553f solid;
     display: inline;
     background-image: linear-gradient(to right, rgba(192, 251, 255, 0.776), rgba(29, 155, 164, 0.678));
+    margin-left: 5px;
+    padding-left: 5px;
 }
 
 input:hover {
@@ -41,18 +51,18 @@ input:hover {
 
 .vl {
     border-left: 6px solid rgb(39, 134, 141);
-    height: 600px;
+    height: 670px;
     position: absolute;
     left: 15%;
     margin-left: 3px;
+    margin-top: -20px;
 }
 
-.field {
-    color: #448d91;
+label {
+    color: #285c5f;
     display: inline-block;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; 
     padding-top: 5px;
-    /* text-shadow: 2px 1px #393e46; */
 }
 
 p {
@@ -60,35 +70,48 @@ p {
     color: red;
     padding-left: 10px;
     font-weight: bold;
-    /* font-size: x-small; */
 }
 
-/* #fnerrormsg {
-    display: inline; 
-    color: red;
-    padding-left: 10px;
-    font-weight: bold;
-    font-size: x-small;
-} */
+.questions {
+    color: #345f61;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-/* #lnerrormsg {
-    display: inline; 
-    color: red;
-    padding-left: 10px;
-    font-weight: bold;
-    font-size: x-small;
+.custom-select {
+    background-color: #b5d3e779;
+    border: 2px #1339553f solid;
 }
-#emailerrormsg {
-    display: inline; 
-    color: red;
-    padding-left: 10px;
-    font-weight: bold;
-    font-size: x-small;
+
+.custom-select:hover {
+    background-color: #59b1eb83;
 }
-#phoneerrormsg {
-    display: inline; 
-    color: red;
-    padding-left: 10px;
+
+.custom-select:focus {
+    background-color: #59b0ebd3;
+}
+
+#submitButton {
+    background-image: linear-gradient(to right, rgb(241, 246, 247), rgba(225, 237, 241, 0.678));
+    border-radius: 12px;
+    border: 2px solid #448d91;
+    width: 80px; 
+    height: 50px;
+    margin-top: 30px;
+}
+
+#submitButton:hover {
+    background-color: black;
+    font-size: 15px;
     font-weight: bold;
-    font-size: x-small;
-} */
+}
+
+.pretty {
+    display: none;
+}
+
+.regButton:hover + .pretty{
+    display: block;
+    color: red;
+ }
+
