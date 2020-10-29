@@ -9,8 +9,9 @@ typedef struct key_value{
 
 int main(){
     char array[200];
-	int n = atoi(getenv("CONTENT_LENGTH"));
-	fgets(array,n,stdin);
+    int n = atoi(getenv("CONTENT_LENGTH"));
+    n++;
+    fgets(array,n,stdin);
     char c; 
     int a = 0; 
     int pc=0;
