@@ -35,7 +35,7 @@ int main(){
     tok=strtok(NULL,"=");
     // stores the password
     strcpy(currpswrd, tok);
-    // users.csv is stored in public_html
+    // users.csv is stored in the same directory as the cgi file
     FILE *user_data = fopen("users.csv", "r");
     if(user_data == NULL){
         perror("unable to open the file");
