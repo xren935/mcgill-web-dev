@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+// use a struct to save the data read from the csv file 
+// this struct will be used for password matching
 typedef struct key_value{
     char username[20]; 
     char password[20];
@@ -23,19 +25,18 @@ int main(){
     char currpswrd[20]; 
 	printf("Content-Type:text/html\n\n");
 	printf("<html><body>");
-    printf("<h1>%s</h1>", array);
     tok = strtok(array, "&");
     otok=tok+strlen(tok)+1;
     tok=strtok(tok,"=");
     tok=strtok(NULL,"=");
-    // parse the query_string, stores the username
+    // stores the username
     strcpy(currusrname, tok); 
     tok=otok;
     tok=strtok(tok,"=");
     tok=strtok(NULL,"=");
     // stores the password
     strcpy(currpswrd, tok);
-    // users.csv is stored in the same directory as the cgi file
+    // assumes users.csv is stored in the same directory as the cgi file
     FILE *user_data = fopen("users.csv", "r");
     if(user_data == NULL){
         perror("unable to open the file");
@@ -45,7 +46,7 @@ int main(){
     int row_count = 0; 
     int field_count = 0;
     int i=0; 
-    // values from the database stored in a struct
+    // dict stores datat read from the csv file
     dict values[100]; 
     while(fgets(line, sizeof(line), user_data)){
         field_count = 0;
@@ -80,6 +81,7 @@ int main(){
             }
         }
     }
+    // user name doesn't exist in the database
     printf("<h1>Wrong username or password</h1>");
     printf("</body></html>");
     return 0;
