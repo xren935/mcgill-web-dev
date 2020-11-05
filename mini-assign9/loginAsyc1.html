@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <meta charset=”utf-8” />
+</head>
+
+<body>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <!-- <script>
+        // this is the id of the form
+    $("#post-form").submit(function(e) {
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+            var form = $(this);
+            var url = form.attr('action');
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(), // serializes the form's elements.
+            success: function(data)
+            {
+                alert(data); // show response from the php script.
+            }
+        });
+    });
+    </script> -->
+    <script type="text/javascript">
+        const form = {
+            username: document.getElementById('usrname'),
+            password: document.getElementById('passwrd'),
+            submit: document.getElementById('sub'),
+            errormsg: document.getElementById('msg')
+        }
+
+        form.submit.addEventListener('click', () => {
+            const request = new XMLHttpRequest();
+            request.onload = () => {
+                let responseObj = null;
+                try {
+                    responseObj = JSON.parse(request.responseText);
+                }catch(e){
+                    console.error("can't parse json :(");
+                }
+                if(responseObj) {
+                    handleResponse(responseObj)
+                }
+
+            };
+            const requestData = `username=${form.username.value}&password=${form.password.value}`;
+            console.log(requestData);
+            request.open('post', 'checkpass.py');
+            request.send(requestData);
+
+            function handleResponse(responseObj){
+                console.log(responseObj);
+                if(responsObj.ok){
+                    location.href = './users.csv';
+                }
+            }
+
+
+        })
+        var frm = $('#post-form');
+    
+        frm.submit(function (e) {
+            e.preventDefault();
+    
+            $.ajax({
+                type: 'POST',
+                url: '',
+                data: frm.serialize(),
+                success: function (data) {
+                    alert("hi");
+                    console.log('Submission was successful.');
+                    console.log(data);
+                },
+                error: function (data) {
+                    console.log('An error occurred.');
+                    console.log(data);
+                },
+            });
+        });
+    </script>
+    <h1>Please Login</h1>
+    <ul id="msg"></ul>
+    <form name="input" action="" method="post" id="post-form">
+        <label for="uname"><b>Username:</b></label>
+        <input type="text" name="uname" id="usrname" required></input>
+        <br></br>
+        <label for="psw"><b>Password:</b></label>
+        <input type="password" name="psw" id="passwrd" required></input>
+        <br><br/>
+	<button type="submit" id="sub">Login</button>
+    </form>
+</body>
+</html>
